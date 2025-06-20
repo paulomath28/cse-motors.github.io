@@ -1,1 +1,17 @@
+<!-- Content heading -->
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
 
+<!-- Message block -->
+<!-- To remain commented out until the next unit -->
+<%# messages() %>
+
+<!-- Inventory items display -->
+<%- singlePage %>
+<form action="/account/favorites/add" method="POST">
+  <input type="hidden" name="inventory_id" value="<%= inventory.inv_id %>">
+  <button type="submit">Add to Favorites</button>
+</form>
